@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DA49B27B-C70D-4F99-AC05-02ACBBE0F10E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FE8FDCFA-8C2B-4586-BC63-A18BE3EAC962}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaConsumer", "src\KafkaConsumer\KafkaConsumer.csproj", "{D37CA1A9-50C6-49CF-8038-A7256263790A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaConsumer", "src\KafkaConsumer\KafkaConsumer.csproj", "{35C78EE6-DAF4-481D-8F6C-118B3341E36E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D37CA1A9-50C6-49CF-8038-A7256263790A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D37CA1A9-50C6-49CF-8038-A7256263790A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D37CA1A9-50C6-49CF-8038-A7256263790A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D37CA1A9-50C6-49CF-8038-A7256263790A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C78EE6-DAF4-481D-8F6C-118B3341E36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C78EE6-DAF4-481D-8F6C-118B3341E36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C78EE6-DAF4-481D-8F6C-118B3341E36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C78EE6-DAF4-481D-8F6C-118B3341E36E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D37CA1A9-50C6-49CF-8038-A7256263790A} = {DA49B27B-C70D-4F99-AC05-02ACBBE0F10E}
+		{35C78EE6-DAF4-481D-8F6C-118B3341E36E} = {FE8FDCFA-8C2B-4586-BC63-A18BE3EAC962}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4B5205A-8E50-45B2-9C51-B5A6249BB2A9}

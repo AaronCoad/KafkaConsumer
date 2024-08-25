@@ -1,28 +1,35 @@
 using System.Text.Json;
 using Microsoft.Azure.Cosmos;
+using Microsoft.Extensions.Configuration;
 
 public class Repository
 {
     CosmosClient client { get; set; }
+    Container container { get; set; }
+    Database database { get; set; }
 
-    public Repository(string connectionString)
+    public Repository(IConfigurationSection configurationSection)
     {
-        client = new CosmosClient(connectionString, new CosmosClientOptions() { AllowBulkExecution = true, MaxRetryAttemptsOnRateLimitedRequests = 5 });
+        client = new CosmosClient(configurationSection["ConnectionString"],
+                                  new CosmosClientOptions()
+                                  {
+                                      AllowBulkExecution = true,
+                                      MaxRetryAttemptsOnRateLimitedRequests = 5
+                                  });
+        database = client.GetDatabase(configurationSection["DatabaseId"]);
+        container = database.GetContainer(configurationSection["Container"]);
     }
 
     public async Task<bool> Upsert(List<Dictionary<string, object>> items)
     {
-        Container container = client.GetDatabase("clients").GetContainer("names");
         List<Task> concurrentTasks = new List<Task>();
         try
         {
-            foreach (var item in items)
+            items.ForEach(item =>
             {
-                item.Add("id", item["Id"].ToString());
-                //var res = await container.CreateItemAsync(item, new PartitionKey(item["Name"].ToString()));
-                //return true;
+                item.Add("id", item["Id"].ToString()!);
                 concurrentTasks.Add(container.UpsertItemAsync(item, new PartitionKey(item["Name"].ToString())));
-            }
+            });
             await Task.WhenAll(concurrentTasks);
             return true;
         }
