@@ -10,4 +10,4 @@ var cosmosConfig = globalConfig.GetSection("Cosmos");
 Consumer consumer = new Consumer(kafkaConfig);
 Repository repository = new Repository(cosmosConfig);
 Application application = new Application(consumer, repository);
-application.Run(kafkaConfig["Topic"]!);
+await application.Run(kafkaConfig["Topic"]!);
