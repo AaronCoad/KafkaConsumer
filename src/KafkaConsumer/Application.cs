@@ -13,9 +13,9 @@ public class Application
         Repository = repository;
     }
 
-    public async Task Run(string topic, int numberOfConsumers = 1)
+    public async Task Run(string topic, int partitions = 1)
     {
-        List<Consumer> consumers = new List<Consumer>(numberOfConsumers) { this.Consumer };
+        List<Consumer> consumers = new List<Consumer>(partitions) { this.Consumer };
         List<Task> tasks = new List<Task>();
         consumers.ForEach(consumer =>
         {
